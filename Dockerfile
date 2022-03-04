@@ -31,5 +31,7 @@ RUN apk add dos2unix
 
 ADD run.sh run.sh
 ADD backup.sh backup.sh
+RUN dos2unix run.sh
+RUN dos2unix backup.sh
 
-CMD ["dos2unix", "run.sh"]
+CMD ["sh", "run.sh"]
