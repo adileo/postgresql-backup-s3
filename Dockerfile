@@ -27,7 +27,9 @@ ENV SCHEDULE **None**
 ENV ENCRYPTION_PASSWORD **None**
 ENV DELETE_OLDER_THAN **None**
 
+RUN apk add dos2unix
+
 ADD run.sh run.sh
 ADD backup.sh backup.sh
 
-CMD ["sh", "run.sh"]
+CMD ["dos2unix", "run.sh"]
